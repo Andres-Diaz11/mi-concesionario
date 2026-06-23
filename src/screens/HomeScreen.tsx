@@ -1,10 +1,10 @@
-import { FlatList, SafeAreaView } from "react-native";
-import motos from "../../src/data/motos.json";
-import MotoCard from "../../src/components/MotoCard";
+import { View, FlatList } from "react-native";
+import motos from "../data/motos.json";
+import MotoCard from "../components/MotoCard";
 
 export default function HomeScreen() {
   return (
-    <SafeAreaView style={{ flex: 1, padding: 15 }}>
+    <View style={{ flex: 1, padding: 10 }}>
       <FlatList
         data={motos}
         keyExtractor={(item) => item.id.toString()}
@@ -12,6 +12,6 @@ export default function HomeScreen() {
           <MotoCard moto={item} />
         )}
       />
-    </SafeAreaView>
+    </View>
   );
 }
